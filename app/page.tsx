@@ -1,38 +1,35 @@
-import { SiteNav } from '@/components/nav/site-nav'
-import { SystemCanvas } from '@/components/system-canvas'
-import { Closing } from '@/components/sections/closing'
-import { Evidence } from '@/components/sections/evidence'
-import { Professional } from '@/components/sections/professional'
-import { Hero } from '@/components/sections/hero'
-import { ScrollNarrative } from '@/components/sections/scroll-narrative'
-import { ScrollOrchestrator } from '@/components/scroll/scroll-orchestrator'
-import { DiagnosticRail, CompletionBanner } from '@/components/diagnostic-rail'
+import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
+import Hero from './components/Hero'
+import Experience from './components/Experience'
+import BentoProjects from './components/BentoProjects'
+import TerminalFooter from './components/TerminalFooter'
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://urwah-siddiqui-portfolio.vercel.app'),
+  title: 'Urwah Siddiqui - Backend & DevSecOps Engineer | FastAPI, AWS, Security',
+  description: 'Urwah Siddiqui builds resilient backend systems, delivery infrastructure, and practical application security controls.',
+  openGraph: { title: 'Urwah Siddiqui - Backend & DevSecOps Engineer', description: 'Backend systems, DevSecOps, and application security.', images: ['/og.png'] },
+  icons: { icon: '/icon.svg' },
+}
+
+const personSchema = {
+  '@context': 'https://schema.org', '@type': 'Person', name: 'Urwah Siddiqui',
+  jobTitle: 'Backend & DevSecOps Engineer', url: 'https://urwah-siddiqui-portfolio.vercel.app',
+  email: 'mailto:urwahsiddiqui6@gmail.com',
+  sameAs: ['https://github.com/UrwahSiddiqui', 'https://www.linkedin.com/in/urwah-siddiqui-815356195/'],
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'FAST-NUCES' },
+  knowsAbout: ['FastAPI', 'PostgreSQL', 'Redis', 'DevSecOps', 'Application Security'],
+}
 
 export default function Page() {
   return (
     <>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-coral focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink"
-      >
-        Skip to content
-      </a>
-
-      <SiteNav />
-      <DiagnosticRail />
-
-      <SystemCanvas />
-
-      <main id="main" className="relative z-10">
-        <Hero />
-        <ScrollNarrative />
-        <Evidence />
-        <Professional />
-        <Closing />
-        <CompletionBanner />
-      </main>
-
-      <ScrollOrchestrator />
+      <a className="skip-link" href="#main">Skip to content</a>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, '\\u003c') }} />
+      <main id="main"><Hero /><Experience /><BentoProjects /></main>
+      <TerminalFooter />
+      <Analytics />
     </>
   )
 }

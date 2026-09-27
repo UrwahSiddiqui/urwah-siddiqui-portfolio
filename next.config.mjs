@@ -4,9 +4,10 @@ const nextConfig = {
     unoptimized: true,
   },
   async headers() {
+    const developmentScriptPolicy = process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''
     const contentSecurityPolicy = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'",
+      `script-src 'self' 'unsafe-inline'${developmentScriptPolicy}`,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob:",
       "font-src 'self' data:",
@@ -15,7 +16,6 @@ const nextConfig = {
       "base-uri 'self'",
       "frame-ancestors 'none'",
       "form-action 'self'",
-      'upgrade-insecure-requests',
     ].join('; ')
     return [
       {
