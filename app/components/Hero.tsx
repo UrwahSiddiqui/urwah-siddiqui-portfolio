@@ -5,7 +5,7 @@ import Lenis from 'lenis'
 import MagneticLetter from './ui/MagneticLetter'
 import Pipeline from './Pipeline'
 
-const roles = ['Backend', 'DevSecOps', 'AppSec']
+const roles = ['Backend APIs', 'DevSecOps', 'AppSec', 'VAPT', 'Cloud Security']
 function MagneticWord({ word, muted = false }: { word: string; muted?: boolean }) {
   return <span className={`name-row ${muted ? 'muted-name' : ''}`} aria-hidden="true">{word.split('').map((char, index) => <MagneticLetter key={`${char}-${index}`} char={char} />)}</span>
 }
@@ -28,8 +28,9 @@ export default function Hero() {
       <div className="hero-grid"><div className="hero-copy">
         <h1 id="hero-title"><span className="sr-only">Urwah Siddiqui</span><MagneticWord word="URWAH" /><MagneticWord word="SIDDIQUI" muted /></h1>
         <div className="type-line" aria-live="polite"><span>{roles[role]}</span><i aria-hidden="true">_</i></div>
-        <div className="pills" role="list" aria-label="System qualities"><span role="listitem">OFFLINE QUEUE</span><span role="listitem">IDEMPOTENT</span><span role="listitem">AUDIT TRAIL</span></div>
+        <div className="pills" role="list" aria-label="Core capabilities"><span role="listitem">FASTAPI SYSTEMS</span><span role="listitem">SECURE DELIVERY</span><span role="listitem">VULNERABILITY TESTING</span></div>
         <div className="hero-actions"><a className="button-primary" href="#work">View Systems</a><a className="button-ghost" href="/Urwah_CV.pdf" download>Download CV</a></div>
+        <div className="contact-shortcuts" aria-label="Contact Urwah"><a href="mailto:urwahsiddiqui6@gmail.com"><span aria-hidden="true" />Email Urwah</a><a href="https://www.linkedin.com/in/urwah-siddiqui-815356195/" target="_blank" rel="noreferrer"><span aria-hidden="true" />LinkedIn ↗</a></div>
         <p className="trust">Rector&apos;s List 1st • CTF Winner 24&amp;26 • FAST-NUCES</p>
       </div><Pipeline /></div>
     </section>

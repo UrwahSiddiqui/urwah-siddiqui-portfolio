@@ -5,7 +5,7 @@ export default function Experience() {
     <section id="experience" className="content-section" aria-labelledby="experience-title">
       <h2 id="experience-title" className="eyebrow">02 / EXPERIENCE</h2>
       <article className="experience-card">
-        <header><div><strong>Zyne Ventures</strong><span>DevOps &amp; Cybersecurity Engineer</span></div><div><span>Karachi</span><time dateTime="2026-06/2026-08">Jun–Aug 2026</time></div></header>
+        <header><div><strong>DevOps &amp; Cybersecurity Engineer</strong><span>Zyne Ventures</span></div><div><span>Karachi</span><time dateTime="2026-06/2026-08">Jun–Aug 2026</time></div></header>
         <ul>
           <li><b>Hardened 4 prod/staging</b><span>Linux, Nginx, SSH, UFW, HTTPS</span></li>
           <li><b>Migrated SQLite/MySQL → Postgres</b><span>with reconciliation</span></li>
