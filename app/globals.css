@@ -1,0 +1,157 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Brand palette */
+  --color-ink: #13161a;
+  --color-surface: #17191d;
+  --color-ivory: #f5f0e8;
+  --color-text: #e3ddd2;
+  --color-muted: #a19991;
+  --color-coral: #d98664;
+  --color-coral-bright: #ed926f;
+  --color-gold: #785521;
+  --color-violet: #2b2836;
+  --color-line: #554e46;
+
+  /* Semantic tokens mapped to the brand palette */
+  --color-background: var(--color-ink);
+  --color-foreground: var(--color-text);
+  --color-primary: var(--color-coral);
+  --color-primary-foreground: var(--color-ink);
+  --color-muted-foreground: var(--color-muted);
+  --color-border: var(--color-line);
+  --color-ring: var(--color-coral-bright);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --radius: 0.5rem;
+}
+
+:root {
+  --font-geist: 'Geist Variable';
+  --font-fraunces: 'Fraunces Variable';
+  color-scheme: dark;
+  --background: var(--color-ink);
+  --foreground: var(--color-text);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-coral);
+    color: var(--color-ink);
+  }
+
+  /* Visible focus states for keyboard users */
+  :focus-visible {
+    outline: 2px solid var(--color-coral-bright);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  .tech-label {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  /* Signal indicator pulse */
+  @keyframes signal-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(6px);
+    }
+  }
+  .animate-signal-pulse {
+    animation: signal-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes fallback-drift {
+    0%,
+    100% {
+      transform: translate3d(-1%, -1%, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(1%, 1%, 0) scale(1.04);
+    }
+  }
+  .animate-fallback-drift {
+    animation: fallback-drift 14s ease-in-out infinite;
+  }
+}
+
+/* Phase 2: signal-led motion, with readable DOM content at every stage. */
+html { scroll-padding-top: 6rem; }
+body { overflow-wrap: anywhere; }
+main > section { scroll-margin-top: 6rem; }
+#work article, #education { scroll-margin-top: 6rem; }
+[hidden] { display: none !important; }
+.project-surface {
+  --border-energy: 0;
+  min-width: 0;
+  box-shadow: 0 0 28px rgba(217, 134, 100, calc(var(--border-energy) * .13));
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.project-surface:focus-within { border-color: #ed926f; }
+.diagnostic-fill { transition: transform .15s linear; box-shadow: 0 0 12px #d98664; }
+.completion-banner { transition: background-color .6s, box-shadow .6s; }
+.completion-banner[data-completion="unlocked"] { background-color: #28201e; box-shadow: inset 0 1px #d98664; }
+.sound-toggle:hover { border-color: #d98664; }
+@media (hover: hover) and (pointer: fine) {
+  .project-surface:hover { transform: translateY(-4px); border-color: #d98664; box-shadow: 0 12px 42px rgba(217,134,100,.1); }
+}
+@media (max-width: 639px) {
+  .sound-toggle { max-width: 7rem; flex-shrink: 0; }
+  header nav { gap: .5rem; padding-inline: 1rem; }
+  header nav > a { max-width: 8.5rem; }
+  .tech-label { letter-spacing: .08em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .project-surface:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-signal-pulse,
+  .animate-fallback-drift {
+    animation: none;
+  }
+}

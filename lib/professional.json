@@ -1,0 +1,102 @@
+{
+  "name": "Urwah Siddiqui",
+  "positioning": "Backend Development | DevSecOps | Application Security",
+  "summary": "Cybersecurity graduate with practical backend, infrastructure and security experience: FastAPI services, database migrations, Linux hardening, Docker deployments, monitoring and incident investigation. Documents validation, remediation and rollback to support reliable delivery.",
+  "skills": [
+    {
+      "group": "Backend & Data",
+      "text": "Python, FastAPI, PostgreSQL, MySQL, SQLite, Redis, API security",
+      "evidence": "Offline Payment System and database migrations",
+      "href": "#offline-payments"
+    },
+    {
+      "group": "Infrastructure & Delivery",
+      "text": "Linux, Bash, Docker, Docker Compose, Nginx, HTTPS/TLS, SSH, UFW, iptables, Git/GitHub, CI/CD, Jenkins fundamentals",
+      "evidence": "Zyne Ventures: hardening, deployments and handover",
+      "href": "#experience"
+    },
+    {
+      "group": "Security & Monitoring",
+      "text": "Prometheus, Grafana, Alertmanager, Node Exporter, AWS IAM/CloudTrail/CloudWatch/SNS, OWASP, Burp Suite, ZAP, Nmap, Wazuh and Splunk fundamentals",
+      "evidence": "Four-server monitoring, security assessment and AWS lab",
+      "href": "#security-assessment"
+    }
+  ],
+  "experience": {
+    "employer": "Zyne Ventures",
+    "role": "DevOps & Cybersecurity Engineer",
+    "dates": "June–August 2026",
+    "location": "Karachi, Pakistan",
+    "highlights": [
+      "Hardened Linux, Nginx, SSH and firewalls across production and staging; enforced HTTPS, security headers and restricted service access.",
+      "Implemented Prometheus, Grafana, Alertmanager, Node Exporter and SSL-expiry alerts across four servers for resource, availability and certificate monitoring.",
+      "Investigated compromised websites, outages and abnormal resource activity using system, application and web-server logs; restored services and documented corrective actions."
+    ],
+    "details": [
+      "Migrated SQLite and MySQL databases to PostgreSQL; reconciled source and destination records for data integrity.",
+      "Secured Dockerized services behind Nginx and HTTPS with restricted database connectivity.",
+      "Created deployment, validation, remediation and rollback SOPs and Jira records for repeatable handover."
+    ]
+  },
+  "projects": [
+    {
+      "id": "offline-payments",
+      "name": "Offline Payment System",
+      "dates": "September 2025–May 2026",
+      "role": "Team project · Backend, application security & DevSecOps contribution",
+      "description": "Contributed Dockerized FastAPI, PostgreSQL and Redis services; implemented MFA/OTP, JWT, RBAC, AES-256, RSA-PSS signatures, audit logging and hash-chained offline records. Tested authentication, authorization and transaction workflows.",
+      "tech": [
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "JWT",
+        "RBAC"
+      ]
+    },
+    {
+      "id": "security-assessment",
+      "name": "Secure SDLC & Web Application Security Assessment",
+      "dates": "May 2026",
+      "role": "Threat modelling & security assessment",
+      "description": "Modelled threats and assessed applications with OWASP Threat Dragon, Burp Suite, ZAP, Postman and Nmap; documented evidence, severity and remediation.",
+      "tech": [
+        "OWASP Threat Dragon",
+        "Burp Suite",
+        "OWASP ZAP",
+        "Postman",
+        "Nmap"
+      ]
+    },
+    {
+      "id": "aws-monitoring",
+      "name": "AWS Security Monitoring & Alerting Lab",
+      "dates": "April 2026",
+      "role": "Cloud security lab",
+      "description": "Configured IAM, CloudTrail, CloudWatch filters and SNS alerts for failed logins, EC2 launches, root activity, privileged IAM actions and logging-stop attempts.",
+      "tech": [
+        "AWS IAM",
+        "CloudTrail",
+        "CloudWatch",
+        "SNS"
+      ]
+    }
+  ],
+  "education": {
+    "degree": "BS Cyber Security",
+    "institution": "FAST – National University of Computer & Emerging Sciences",
+    "dates": "2022–2026",
+    "cgpa": "3.02"
+  },
+  "achievements": [
+    "Rector’s List – 1st Position (Spring 2026)",
+    "1st Position – TechnoFest CTF (2024 & 2026); IntraFAST CTF",
+    "1st Position – PCC Ideas Cup (2025); Regional Finalist – National AI Competition (2025)",
+    "Represented FAST-NUCES at Pak-Crypt International Symposium (2025)"
+  ],
+  "training": {
+    "completed": "Google Foundations of Cybersecurity; Google Play It Safe; TryHackMe Pre-Security",
+    "simulations": "Deloitte Cyber; Mastercard Cybersecurity; Commonwealth Bank Introduction to Cybersecurity",
+    "inProgress": "Google DevSecOps"
+  }
+}
